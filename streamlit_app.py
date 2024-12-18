@@ -25,7 +25,7 @@ if 'past' not in st.session_state:
 # Creating a function that returns the user's input from a text input field
 
 def get_text():
-    input_text = st.text_input("You : ", "Ask me anything about AI in industries. I'll help you.", key = "input")
+    input_text = st.text_input("You : ", "", key = "input")
     return input_text
 
 # We will generate response using the 'generate response' function and store into variable called output
