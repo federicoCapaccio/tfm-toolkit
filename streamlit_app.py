@@ -1,30 +1,19 @@
 # Import Libraries
-
-import openai
 import streamlit as st
 from streamlit_chat import message
 
 # Open API key
 
-openai.api_key = st.secrets["OPEN_API_KEY"]
 
 # Generating responses from the api
 
 def generate_response(prompt):
-    completions = openai.Completion.create(
-        engine = "text-davinci-003",
-        prompt = prompt,
-        max_tokens = 1024,
-        n=1,
-        stop=None,
-        temperature=0.5
-    )
-    messages = completions.choices[0].text
-    return messages
+   
+    return "Hi, I am not able to answer yet, but I'll learn soon!"
 
 # Creating the chatbot interfaces
 
-st.title("Chatbot : Coding Craft + OpenAI ")
+st.title("The Frontier MINDS Toolkit")
 
 # Storing the input
 
@@ -36,7 +25,7 @@ if 'past' not in st.session_state:
 # Creating a function that returns the user's input from a text input field
 
 def get_text():
-    input_text = st.text_input("You : ", "Hello, Coders, how are you?", key = "input")
+    input_text = st.text_input("You : ", "Ask me anything about AI in industries. I'll help you.", key = "input")
     return input_text
 
 # We will generate response using the 'generate response' function and store into variable called output
